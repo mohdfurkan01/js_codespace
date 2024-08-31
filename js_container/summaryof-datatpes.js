@@ -2,7 +2,7 @@
 //call by value
 // 7 types: String, Number, Boolean, null, undefined, Symbol, BigInt
 const score = 100;
-const scoreValue = 200.3;
+const scoreValue = 200.4;
 
 const isLoggedIn = false;
 const outsideTemp = null; //typeof object
