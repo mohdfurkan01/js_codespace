@@ -46,3 +46,22 @@ function addMyNumbers(num1, num2){
     //console.log(loginUserMsg("Ahsan")); //Ahsan just logged in
     console.log(loginUserMsg()); //Please Enter a Username
      
+function calculateCartPrice(num1){
+        return num1
+    }
+//console.log(calculateCartPrice(200))
+console.log(calculateCartPrice(200, 340, 600)) //200
+
+
+// (...) is called the rest operator. It's used to gather or collect multiple values (arguments) into an array.
+//The rest operator (...num1) is used to take multiple numbers and group them into one array.
+function calculateCartPrice1(...num1){
+    return num1
+}
+console.log(calculateCartPrice1(200, 340, 600)) //[ 200, 340, 600 ]
+//In this case, all arguments passed to calculateCartPrice1 (200, 340, 600) are collected into an array called num1, and that's why we get [200, 340, 600] as the output.
+
+//Rest (what you used) is for collecting things into an array.
+//Spread is for spreading an array into individual items.
+const prices = [400, 800, 1000];
+console.log(calculateCartPrice1(...prices)); [400, 800, 1000] 
