@@ -60,4 +60,16 @@ return 15
 
 // Every time a function is called, a new execution context is created, which is cleared after the function execution. The code first goes through a memory creation phase where everything is undefined, and then the execution phase assigns actual values and executes the logic.
 
+//                                Call Stack
+//The call stack in JavaScript is a fundamental concept that helps the engine keep track of function calls. A call stack is also known as an 'Execution Context Stack', 'Runtime Stack', or 'Machine Stack'.
 
+//The call stack is the backbone of JavaScript function execution. It manages the order of function calls and helps the engine determine which function to execute next. Functions are added to the stack as they're called and removed once they're finished, following a LIFO (Last In, First Out) approach.
+
+// It uses the LIFO principle (Last-In-First-Out). When the engine first starts executing the script, it creates a global context and pushes it on the stack. Whenever a function is invoked, similarly, the JS engine creates a function stack context for the function and pushes it to the top of the call stack and starts executing it.
+
+// When execution of the current function is complete, then the JavaScript engine will automatically remove the context from the call stack and it goes back to its parent.
+
+// The call stack is a mechanism to manage the execution of multiple function calls in JavaScript.
+// Whenever a function is called, it gets added to the top of the stack.
+// Once the function finishes executing, it gets removed (or "popped") from the stack.
+// The JavaScript engine always executes the function that's on top of the call stack.
