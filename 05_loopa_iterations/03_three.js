@@ -3,6 +3,7 @@
 //The for...of loop is used to iterate over iterable objects like arrays, strings, or other collections.
 //Initialization: It automatically initializes a loop variable
 //You don’t need to manage the loop variable or termination condition explicitly.
+//Returns: Values of the iterable object.
 
 // ["", "", ""]
 //[{}, {}, {}]
