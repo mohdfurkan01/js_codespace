@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM || Coffee with Code</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    //CRUD Operation
+    //Add
+
+    //innerHTML to put text inside the <li>. This works for basic text, but it can be slower and risky. If you're adding content from an unknown source, it could lead to security problems like XSS
+    function addLangauge(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${langName}`;
+      //   const add = document.querySelector(".language");
+      //   add.appendChild(li); //OR
+      document.querySelector(".language").appendChild(li);
+    }
+    addLangauge("python");
+    addLangauge("kotlin");
+
+    //This method is quicker and safer because it directly adds text without turning it into HTML, so it's less likely to cause security problems.
+    function addLanguageOptimizeWay(langName) {
+      const li = document.createElement("li");
+      // const addText = document.createTextNode(langName)
+      // li.appendChild(addText) //OR
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addLanguageOptimizeWay("java");
+    //createTextNode() is faster because the browser doesn’t have to parse the string as HTML.
+
+    //Edit
+    //nth-child is a simple and effective way to target specific elements based on their position.
+    const secondLang = document.querySelector("li:nth-child(2)");
+    //secondLang.innerHTML = "anaconda"
+    const updated_li = document.createElement("li");
+    updated_li.textContent = "anaconda";
+    secondLang.replaceWith(updated_li);
+    //Edit
+    const firstLang = document.querySelector("li:first-child");
+    //console.log(firstLang);
+    firstLang.outerHTML = "<li>Typescript</li>";
+    //textContent: This method is faster and more secure than innerHTML because it directly inserts text without treating it as HTML.
+    //replaceWith: This method directly replaces an element with a new one, keeping your code clean and efficient.
+
+    //li:nth-child(odd) – Selects all odd-numbered <li> elements.
+    //li:nth-child(even) – Selects all even-numbered <li> elements.
+    //li:nth-child(3) – Selects the third <li> element.
+
+    //Remove | Delete
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>
