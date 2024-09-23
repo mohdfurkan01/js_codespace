@@ -28,6 +28,7 @@ buttons.forEach(function (btn) {
         break;
 
       default:
+        console.log("Invalid choice");
         break;
     }
   });
