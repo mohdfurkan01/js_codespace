@@ -1,3 +1,7 @@
+## project link
+
+[click here](https://stackblitz.com/edit/stackblitz-starters-udgqpy?file=index.html)
+
 # solution code
 
 ## project 2
@@ -33,7 +37,7 @@ form.addEventListener('submit', function (e) {
     // results.innerHTML = `<span>The BMI is: ${bmi}<span/>`;
     results.style.color = 'green';
 
-    # Task: Based on the given BMI condition, display the appropriate message:
+   # Task: Based on the given BMI condition, display the appropriate message:
    # Under Weight: BMI less than 18.6
    # Normal Range: BMI between 18.6 and 24.9
    # Overweight: BMI greater than 24.9
