@@ -10,6 +10,8 @@
 const clock = document.getElementById("clock");
 //const clock = document.getElementById('#clock')
 
+#setInterval(function () {}, milliseconds); //Syntax:
+
 // Method: 1
 setInterval(function () {}, milliseconds); //Syntax, 1sec = 1000 ms
 
