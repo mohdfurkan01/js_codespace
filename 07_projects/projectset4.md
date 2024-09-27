@@ -79,15 +79,15 @@ function endGame() {
   userInput.value = ""; //value clean
   userInput.setAttribute("disabled", "");
   p.classList.add("button");
-  p.innerHTML = `<h2 id= "newGame" >Start New Game<h2/>`;
+  p.innerHTML = `<h2 id="newGame">Start New Game</h2>`;
   startOver.appendChild(p);
   playGame = false;
   newGame();
 }
 
 function newGame() {
-  const newGameBtn = document.querySelector(".newGame");
-  newGameBtn.addEventListener("click", function () {
+  const newGameBtn = document.querySelector("#newGame");
+  newGameBtn.addEventListener("click", function (e) {
     randomNumber = parseInt(Math.random() * 100 + 1);
     prevGuess = [];
     numGuess = 1;
