@@ -30,11 +30,17 @@ console.log("<======> About keyword type events, mouse type events <========>");
   />
 </li>;
 
+<input type="text" id="textInput" placeholder="Press a key" />;
+
 document.getElementById("vscodeimg").addEventListener("keydown", function (e) {
   console.log("Key down:", e.key);
 });
 // press the letter 'A', it will show 'Key down: A' in the console.
 //tabindex="0" makes the image element focusable by keyboard or mouse click. By default, images are not focusable, so they cannot receive keydown events.
+document.getElementById("textInput").addEventListener("keydown", function (e) {
+  console.log("Key down:", e.key);
+});
+//don’t need to add tabindex to inputs because they are already focusable by default, so for elements like input, we can easily use keydow.
 ```
 
 # Mouse Events
@@ -70,8 +76,23 @@ Happens when the mouse moves over an element.
 Happens when the mouse leaves an element.
 
 ```javascript
-document.addEventListener("click", function () {
-  console.log("You clicked on the page!");
+//HTML
+<li>
+  <img
+    width="200px"
+    id="styleimg"
+    src="https://images.pexels.com/photos/374560/pexels-photo-374560.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+    alt=""
+    tabindex="0"
+  />
+</li>;
+
+document.getElementById("styleimg").addEventListener("click", function () {
+  console.log("single click fired!");
+});
+
+document.getElementById("styleimg").addEventListener("dblclick", function () {
+  console.log("doubleclick fired!");
 });
 //click anywhere on the page, it will show 'You clicked on the page!' in the console
 ```
