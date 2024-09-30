@@ -94,7 +94,7 @@ document.getElementById("styleimg").addEventListener("click", function () {
 document.getElementById("styleimg").addEventListener("dblclick", function () {
   console.log("doubleclick fired!");
 });
-//click anywhere on the page, it will show 'You clicked on the page!' in the console
+//click and double click on the image, it will show 'single click fired!!' and doubleclick fired! in the console
 ```
 
 # Task Completed✨
