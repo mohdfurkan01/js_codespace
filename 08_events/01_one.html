@@ -31,6 +31,7 @@
             id="styleimg"
             src="https://images.pexels.com/photos/374560/pexels-photo-374560.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
             alt=""
+            tabindex="0"
           />
         </li>
         <li>
@@ -76,6 +77,12 @@
       .getElementById("vscodeimg")
       .addEventListener("keydown", function (e) {
         console.log("Key down:", e.key);
+      });
+
+    document
+      .getElementById("styleimg")
+      .addEventListener("dblclick", function () {
+        console.log("doubleclick fired!");
       });
   </script>
   <!-- <script src="01_one.js"></script> -->
