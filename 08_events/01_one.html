@@ -50,6 +50,7 @@
         </li>
       </ul>
     </div>
+    <button id="btn">Timestamp</button>
   </body>
   <script>
     // document.getElementById("formatcode").onclick = function () {
@@ -84,6 +85,10 @@
       .addEventListener("dblclick", function () {
         console.log("doubleclick fired!");
       });
+
+    document.getElementById("btn").addEventListener("click", function (event) {
+      console.log("Event happened at timestamp:", event.timeStamp);
+    });
   </script>
   <!-- <script src="01_one.js"></script> -->
 </html>
