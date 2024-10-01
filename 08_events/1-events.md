@@ -1,6 +1,6 @@
 # Notes
 
-# Keyword Events
+# 1 => Keyword Events
 
 These events are triggered when you interact with the keyboard (like pressing keys).
 
@@ -43,7 +43,7 @@ document.getElementById("textInput").addEventListener("keydown", function (e) {
 //don’t need to add tabindex to inputs because they are already focusable by default, so for elements like input, we can easily use keydow.
 ```
 
-# Mouse Events
+# 2=> Mouse Events
 
 These events are triggered when you interact with the mouse (like clicking or moving the mouse).
 
