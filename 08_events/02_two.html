@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events Part-2</title>
+  </head>
+  <style>
+    #heading {
+      text-align: center;
+      color: red;
+    }
+    #myDiv {
+      padding-top: 15px;
+    }
+    /* .img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh; 
+    } */
+  </style>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2 id="heading">Elements</h2>
+
+    <div class="img">
+      <img
+        width="200px"
+        id="picture"
+        src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+        alt=""
+      />
+    </div>
+
+    <button id="myButton">Button1</button>
+
+    <div id="myDiv">
+      <button id="myButton">Click Me</button>
+    </div>
+    <script>
+      //toElement, srcElement, currentTarget
+      // clientX, clientY, screenX, secreenY
+      //altkey,ctrlkey, shiftkey,keyCode ==> write notes
+      document
+        .getElementById("picture")
+        .addEventListener("keydown", function (event) {
+          console.log("Moving to: ", event.toElement);
+          alert("You are moving to: " + event.toElement.tagName);
+        });
+
+      document
+        .getElementById("myButton")
+        .addEventListener("click", function (e) {
+          console.log(e.srcElement); // In older IE, this will show the clicked button
+          console.log(e.target); // In modern browsers, this does the same thing
+        });
+
+      document.getElementById("myDiv").addEventListener("click", function (e) {
+        console.log("target:", e.target); // Element that triggered the event (the button)
+        console.log("currentTarget:", e.currentTarget); // Element handling the event (the div)
+      });
+    </script>
+  </body>
+</html>
