@@ -50,7 +50,12 @@
         </li>
       </ul>
     </div>
+    <a style="color: aliceblue" href="https://google.com" id="defaultPrevented"
+      >Zen Browser</a
+    >
     <button id="btn">Timestamp</button>
+
+    <button id="Btn1">Button 1</button>
   </body>
   <script>
     // document.getElementById("formatcode").onclick = function () {
@@ -88,6 +93,19 @@
 
     document.getElementById("btn").addEventListener("click", function (event) {
       console.log("Event happened at timestamp:", event.timeStamp);
+    });
+
+    document
+      .getElementById("defaultPrevented")
+      .addEventListener("click", function (event) {
+        event.preventDefault(); // Stops the default link behavior (navigation)
+        console.log("Link clicked, but navigation prevented.");
+        console.log("defaultPrevented: ", event.defaultPrevented); // true
+      });
+
+    document.getElementById("Btn1").addEventListener("click", function (e) {
+      console.log("The target is: ", event.target);
+      console.log("Value of target is: ", event.target.id);
     });
   </script>
   <!-- <script src="01_one.js"></script> -->
