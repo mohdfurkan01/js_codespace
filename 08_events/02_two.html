@@ -37,10 +37,18 @@
     <div id="myDiv">
       <button id="myButton">Click Me</button>
     </div>
+    <div>
+      <input
+        type="text"
+        id="inputBox"
+        placeholder="Click here and hold Alt or Ctrl"
+      />
+    </div>
+
     <script>
       //toElement, srcElement, currentTarget
       // clientX, clientY, screenX, secreenY
-      //altkey,ctrlkey, shiftkey,keyCode ==> write notes
+      //altkey,ctrlkey, shiftkey,keyCode
       document
         .getElementById("picture")
         .addEventListener("keydown", function (event) {
@@ -58,6 +66,29 @@
       document.getElementById("myDiv").addEventListener("click", function (e) {
         console.log("target:", e.target); // Element that triggered the event (the button)
         console.log("currentTarget:", e.currentTarget); // Element handling the event (the div)
+      });
+
+      document.addEventListener("click", function (event) {
+        console.log("You clicked at X position: " + event.clientX);
+        console.log("You clicked at Y position: " + event.clientY);
+        console.log("You clicked at X position: " + event.screenX);
+        console.log("You clicked at Y position: " + event.screenY);
+      });
+
+      document
+        .getElementById("inputBox")
+        .addEventListener("click", function (e) {
+          console.log("Alt key pressed:", e.altKey);
+          console.log("Ctrl key pressed:", e.ctrlKey);
+        });
+
+      document.addEventListener("keydown", function (e) {
+        console.log("Key pressed:", e.keyCode);
+
+        // Example: Checking if the 'Enter' key is pressed
+        if (e.keyCode === 13) {
+          console.log("Enter key was pressed!");
+        }
       });
     </script>
   </body>
