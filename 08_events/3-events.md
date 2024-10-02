@@ -62,3 +62,85 @@ document.getElementById("myDiv").addEventListener("click", function (e) {
   console.log("currentTarget:", e.currentTarget); // Element handling the event (the div)
 });
 ```
+
+# keyCode
+
+keyCode is a number that represents a specific key on your keyboard when you press it. Each key has a unique keycode that allows the browser or app to know exactly which key was pressed.
+
+When you press a key on the keyboard, the browser can detect which key you pressed using keycode.
+For example, the Enter key has a keycode of 13, and the Spacebar has a keycode of 32.
+
+# keyCode property: Contains the numerical value of the pressed key.
+
+keyLeft-37
+keyUp-38
+keyRight-39
+keyDown-40
+Means press keyLeft you will get 37 keycode and so on...
+
+# Common Keycodes:
+
+Enter: 13
+Space: 32
+ArrowUp: 38
+ArrowDown: 40
+Escape (Esc): 27
+A: 65 (uppercase or lowercase ‘a’)
+0-9 numbers: 48 to 57
+
+Keycodes help identify which key was pressed.
+
+```javascript
+document.addEventListener("keydown", function (e) {
+  console.log("Key pressed:", e.keyCode);
+
+  // Example: Checking if the 'Enter' key is pressed
+  if (e.keyCode === 13) {
+    console.log("Enter key was pressed!");
+  }
+});
+```
+
+Keep in mind that keyCode is deprecated and replaced by the key and code properties in modern JavaScript, but it's still widely supported for backward compatibility.
+
+# key Property:
+
+The key property returns the actual value of the key pressed. This means if you press the letter "a", it will return "a" (lowercase), and if you press Shift + A, it will return "A" (uppercase).
+
+# code Property:
+
+The code property refers to the physical location of the key on the keyboard, regardless of the character. For example, pressing the "a" key will return "KeyA" whether you're holding Shift or not.
+
+Differences:
+
+key focuses on what the key does (e.g., "a", "A", or "Enter").
+code focuses on which physical key was pressed (e.g., "KeyA", "Enter"), regardless of what it types.
+
+```javascript
+document.addEventListener("keydown", function (e) {
+  console.log("Key:", e.key); // Output: 'a', 'A', 'Enter', etc.
+  console.log("Code:", e.code); // Output: 'KeyA', 'Enter', etc.
+
+  if (e.key === "Enter") {
+    console.log("You pressed Enter!");
+  }
+
+  if (e.code === "KeyA") {
+    console.log("You pressed the 'A' key.");
+  }
+});
+
+//OR
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    console.log("Enter was pressed!");
+  }
+});
+//OR
+document.addEventListener("keydown", function (e) {
+  if (e.code === "KeyW") {
+    console.log("Move Up (W key)!");
+  }
+});
+//The key and code properties are fully supported in modern browsers, so it's a safer and more future-proof way than keyCode.
+```
