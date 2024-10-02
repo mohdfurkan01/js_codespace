@@ -5,7 +5,7 @@ clientX is a property in JavaScript that tells you the horizontal (x-axis) posit
 # For clientX:
 
 If you click near the left side of the screen, clientX will be a small number (e.g., 0, 15, 20).
-As you click further to the right, the value of clientX increases (e.g., 100, 730, 1145).
+As you click further to the right, the value of clientX increases (e.g. 100, 730, 1145).
 
 it helps you know where the mouse pointer is on the screen when something happens!
 
