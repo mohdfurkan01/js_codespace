@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Events</title>
+    <!-- <style>
+      body {
+        display: flex;
+      }
+    </style> -->
   </head>
   <body style="background-color: #414141; color: aliceblue">
     <h2>Amazing images</h2>
@@ -43,11 +48,24 @@
             tabindex="0"
           />
         </li>
+
         <li>
           <a style="color: aliceblue" href="https://google.com" id="google"
             >Google</a
           >
         </li>
+
+        <div id="parent" style="padding: 20px; background-color: green">
+          <p>Grand Parent Div</p>
+          <img
+            width="200px"
+            id="jsImg"
+            src="https://media.istockphoto.com/id/1497439345/photo/java-script-source-code-on-the-screen.jpg?s=612x612&w=0&k=20&c=jZ9EC1JeE_ssWIWojtHVs2lVP1JWVoVaNLLBGfIHs1g="
+            alt=""
+          />
+          <p>Parent Div</p>
+          <button id="child">Click Me</button>
+        </div>
       </ul>
     </div>
     <a style="color: aliceblue" href="https://google.com" id="defaultPrevented"
@@ -107,6 +125,23 @@
       console.log("The target is: ", event.target);
       console.log("Value of target is: ", event.target.id);
     });
+
+    document.getElementById("parent").addEventListener(
+      "click",
+      function () {
+        console.log("Grand Parent Div Clicked!");
+      },
+      false
+    );
+
+    document.getElementById("child").addEventListener(
+      "click",
+      function (event) {
+        console.log("Button Clicked!");
+        // Prevent event from bubbling up to the parent
+        event.stopPropagation(); // Uncomment this to stop bubbling
+      },
+      false
+    );
   </script>
-  <!-- <script src="01_one.js"></script> -->
 </html>
