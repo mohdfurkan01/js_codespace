@@ -85,9 +85,13 @@
       document.addEventListener("keydown", function (e) {
         console.log("Key pressed:", e.keyCode);
 
-        // Example: Checking if the 'Enter' key is pressed
+        //Example: Checking if the 'Enter' key is pressed
         if (e.keyCode === 13) {
           console.log("Enter key was pressed!");
+        }
+        //OR
+        if (e.key === "Enter") {
+          console.log("Enter was pressed!");
         }
       });
     </script>
