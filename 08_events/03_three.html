@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Click the Image and It will be Deleted</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="codeurl"
+            src="https://images.pexels.com/photos/4509131/pexels-photo-4509131.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+            alt="codeurl"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="formatcode"
+            src="https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="styleimg"
+            src="https://images.pexels.com/photos/374560/pexels-photo-374560.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+            alt=""
+            tabindex="0"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="vscodeimg"
+            src="https://images.pexels.com/photos/248515/pexels-photo-248515.png?auto=compress&cs=tinysrgb&w=600&lazy=load"
+            alt=""
+            tabindex="0"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="jsImg"
+            src="https://media.istockphoto.com/id/1497439345/photo/java-script-source-code-on-the-screen.jpg?s=612x612&w=0&k=20&c=jZ9EC1JeE_ssWIWojtHVs2lVP1JWVoVaNLLBGfIHs1g="
+            alt=""
+            tabindex="0"
+          />
+        </li>
+
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    document.querySelector("#images").addEventListener("click", function (e) {
+      //console.log(" Event===>", e);
+      //console.log("Event Target===>", e.target);
+      console.log("Tag Name is: ===>", e.target.tagName);
+      console.log("Event Target parentNode===>", e.target.parentNode);
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id); //// Helps in understanding which image was clicked
+        let removeIt = e.target.parentNode; // Getting the parent <li> tag
+        console.log("Parent element (will be removed):", removeIt); // See the element that will be removed
+        removeIt.remove(); // Removing the image's parent <li>
+      }
+
+      //removeIt.parentNode.removeChild(removeIt);
+    });
+  </script>
+</html>
