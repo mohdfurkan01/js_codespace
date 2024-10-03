@@ -97,3 +97,43 @@ document.getElementById("inputBox").addEventListener("click", function (e) {
 
 //If neither key is pressed when you click, both will be false.
 ```
+
+# bubbling
+
+In JavaScript, event bubbling is a mechanism where an event starts from the deepest (most specific) element that triggered it and then moves upward, or "bubbles up," through the DOM hierarchy to its ancestors. This means the event is first captured and handled by the target element, and then it bubbles up to its parent elements, then grandparents, and so on, until it reaches the root element (document).
+
+```javascript
+//HTML
+<div id="parent" style="padding: 20px; background-color: green">
+  <p>Grand Parent Div</p>
+  <img
+    width="200px"
+    id="jsImg"
+    src="https://media.istockphoto.com/id/1497439345/photo/java-script-source-code-on-the-screen.jpg?s=612x612&w=0&k=20&c=jZ9EC1JeE_ssWIWojtHVs2lVP1JWVoVaNLLBGfIHs1g="
+    alt=""
+  />
+  <p>Parent Div</p>
+  <button id="child">Click Me</button>
+</div>;
+
+document.getElementById("parent").addEventListener(
+  "click",
+  function () {
+    console.log("Grand Parent Div Clicked!");
+  },
+  false //by default
+);
+
+document.getElementById("child").addEventListener(
+  "click",
+  function (event) {
+    console.log("Button Clicked!");
+    // Prevent event from bubbling up to the parent
+    event.stopPropagation();
+  },
+  false //by default
+);
+```
+
+First, the click event fires on the button itself, triggering the "Button Clicked!".
+Then, because of bubbling, the event travels up and triggers the click event on the parent div, showing the "Grand Parent Div Clicked!".
