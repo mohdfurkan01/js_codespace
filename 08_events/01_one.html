@@ -131,7 +131,7 @@
       function () {
         console.log("Grand Parent Div Clicked!");
       },
-      false
+      false //by default
     );
 
     document.getElementById("child").addEventListener(
@@ -141,7 +141,7 @@
         // Prevent event from bubbling up to the parent
         event.stopPropagation(); // Uncomment this to stop bubbling
       },
-      false
+      false //by default
     );
   </script>
 </html>
