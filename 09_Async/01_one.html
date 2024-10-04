@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Coffee with Code</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    // setTimeout(function () {
+    //   console.log("furkan");
+    // }, 2000);
+
+    const sayHello = function () {
+      console.log("furkan");
+    };
+    setTimeout(sayHello, 2000);
+
+    const changeText = function () {
+      document.querySelector("h1").innerHTML = "Best JS Tutorial";
+    };
+    //setTimeout(cahngeText(), 3000);❎
+    // setTimeout(cahngeText, 3000); //3000 milliseconds => 3 sec
+    const changeMe = setTimeout(changeText, 3000);
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(changeMe); //passed refrence
+      console.log("STOPPED");
+    });
+  </script>
+</html>
