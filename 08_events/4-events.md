@@ -137,3 +137,5 @@ document.getElementById("child").addEventListener(
 
 First, the click event fires on the button itself, triggering the "Button Clicked!".
 Then, because of bubbling, the event travels up and triggers the click event on the parent div, showing the "Grand Parent Div Clicked!".
+
+# Task Completed✨
