@@ -144,3 +144,5 @@ document.addEventListener("keydown", function (e) {
 });
 //The key and code properties are fully supported in modern browsers, so it's a safer and more future-proof way than keyCode.
 ```
+
+# Task Completed✨
