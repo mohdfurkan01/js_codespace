@@ -15,7 +15,7 @@
     // }, 2000);
 
     const sayHello = function () {
-      console.log("furkan");
+      console.log("Naam to suna hi hoga...nhi");
     };
     setTimeout(sayHello, 2000);
 
@@ -23,7 +23,8 @@
       document.querySelector("h1").innerHTML = "Best JS Tutorial";
     };
     //setTimeout(cahngeText(), 3000);❎
-    // setTimeout(cahngeText, 3000); //3000 milliseconds => 3 sec
+    // setTimeout(cahngeText, 3000); ✅
+    //3000 milliseconds => 3 sec
     const changeMe = setTimeout(changeText, 3000);
 
     document.querySelector("#stop").addEventListener("click", function () {
