@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task</title>
+  </head>
+  <body>
+    <h1>Coffee with Code</h1>
+    <ul>
+      <li>
+        Click on the <strong>"Start"</strong> button to begin the interval (it
+        will log a message every second).
+      </li>
+      <li>
+        Click on the <strong>"Stop"</strong> button to stop the interval and
+        prevent further logging.
+      </li>
+    </ul>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    // setInterval(function () {
+    //   console.log("furkan", Date.now());
+    // }, 1000); //1000ms = 1 sec
+
+    // const sayDate = function (str) {
+    //   //console.log(str, Date.now());
+    //   console.log("grr");
+    //   document.querySelector("#start").addEventListener("click", function () {
+    //     console.log("start btn");
+    //   });
+    // };
+    //setInterval(sayDate, 1000, "hi");
+    // const intervalID = setInterval(sayDate, 1000);
+
+    //clearInterval(setInterval)
+
+    // const startBtn = document
+    //   .querySelector("#start")
+    //   .addEventListener("click", function () {
+    //     console.log("start btn");
+    //   });
+    // const hitMe = setInterval(startBtn, 1000);
+
+    // const myFun = function () {
+    //   document.querySelector("#start").addEventListener("click", function () {
+    //     console.log("starting btn");
+    //   });
+    // };
+    // //setInterval(myFun, 1000);
+    // const hitMe = setInterval(myFun, 1000);
+
+    const showMsg = function (str) {
+      let myDate = Date();
+
+      console.log(str, myDate.toLocaleString());
+    };
+
+    document.querySelector("#start").addEventListener("click", function () {
+      console.log("starting buttontn was clicked");
+      const mybtn = setInterval(showMsg, 1000, "hello");
+
+      document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(mybtn); //passed refrence
+        console.log("STOPPED");
+      });
+    });
+
+    // document.querySelector("#stop").addEventListener("click", function () {
+    //   clearInterval(mybtn); //passed refrence
+    //   console.log("STOPPED");
+    // });
+  </script>
+</html>
