@@ -2,7 +2,7 @@
 
 ## project link
 
-[click here](<(https://stackblitz.com/edit/stackblitz-starters-zbfw8x?file=5-keyboard%2Fchaiaurcode.js,index.html)>)
+[click here](https://stackblitz.com/edit/stackblitz-starters-zbfw8x?file=5-keyboard%2Fchaiaurcode.js,index.html)
 
 # solution code
 
