@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121">
+    <div style="color: aqua">
+      <table>
+        <tr>
+          <th>Value</th>
+          <th>State</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>UNSENT</td>
+          <td>Client has been created.open() not called yet.</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>OPENED</td>
+          <td>open() has been called.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>HEADERS_RECEIVED</td>
+          <td>send() has been called, and headers and status are available.</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>LOADING</td>
+          <td>Downloading; responseText holds partial data.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>DONE</td>
+          <td>The operation is complete..</td>
+        </tr>
+      </table>
+
+      <p>create an obj in js show photo and followers count</p>
+      <p>
+        Task: Fetch data from the GitHub API
+        (https://api.github.com/users/mohdfurkan01).
+        <br />
+        Extract the profile photo (avatar_url) and the number of followers
+        (followers).
+        <br />
+        Once data is fetched, create an obj in js that displays:
+        <br />
+        The profile photo.
+        <br />
+        The number of followers.
+      </p>
+    </div>
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/mohdfurkan01";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    console.log("checking whst's happening");
+    xhr.onreadystatechange = function () {
+      console.log("ready state inside fn ==>", xhr.readyState);
+      if (xhr.readyState === 4) {
+        //console.log("===>", this.responseText); //for current context use 'this' keyword
+        const data = this.responseText;
+        //console.log("For data=>", data);
+        console.log("For type=>", typeof data); // comming as string but we need it as an object
+        console.log("==>", data.followers); //that's why getting undefined
+
+        //solution
+        const data1 = JSON.parse(this.responseText); //convert it to json obj
+        console.log("For type=>", typeof data1); //coming as obj
+        console.log("==>", data1.followers); //as expected
+        console.log("==>", data1.following); //as expected
+      }
+    };
+    //console.log("ready state ==>", xhr.readyState); //1
+    xhr.send();
+  </script>
+</html>
