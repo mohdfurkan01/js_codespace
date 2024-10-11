@@ -1,0 +1,50 @@
+#myBtn {
+  background-color: blue;
+  color: red;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  align-items: center;
+  text-align: center;
+}
+#myBtn:hover {
+  color: black;
+}
+.para {
+  color: blueviolet;
+}
+
+.myDiv {
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightgray;
+}
+
+.main,
+.main1 {
+  background-color: green;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  width: 40%;
+  border-radius: 8px;
+}
+
+.main1 {
+  background-color: tomato;
+}
+
+.avatar-img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 3px solid red;
+}
