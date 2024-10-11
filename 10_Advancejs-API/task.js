@@ -4,58 +4,125 @@ let button = document
     console.log("checking click");
 
     let gitProfile = {
-      name: "furkan",
-      age: 22,
       myDetails() {
         let requestUrl = "https://api.github.com/users/mohdfurkan01";
         const xhr = new XMLHttpRequest();
         xhr.open("GET", requestUrl);
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4 && xhr.status === 200) {
-            // Check if the request is complete and successful
             const data = JSON.parse(this.responseText);
             console.log("Followers:", data.followers);
             console.log("Following:", data.following);
             console.log("Avatar URL:", data.avatar_url);
 
-            function handlePhoto() {
-              //for image
-              const div = document.createElement("div");
-              console.log(div);
-              div.className = "main";
+            function showDetails() {
+              //const div = document.createElement("div");
+              //console.log(div);
+              //div.className = "main";
               //div.id = "myId";
-              div.setAttribute("title", "generated title");
-              div.style.backgroundColor = "green";
-              div.style.padding = "12px";
-              div.style.width = "20%";
+              //div.setAttribute("title", "generated title");
+              //div.style.backgroundColor = "green";
+              //div.style.padding = "12px";
+              //div.style.width = "20%";
               //div.innerHTML = "coffee with code"
-              div.innerHTML = `<h2>hello</h2>`; //check it
-              const addText = document.createTextNode("followers");
-              div.appendChild(addText);
+              //div.innerHTML = <h2>${data.followers}</h2>; //check it
+              // div.innerHTML = <img src=${data.avatar_url} alt="nothing">;
+              // const addText2 = document.createTextNode("Followers");
+              // div.appendChild(addText2);
+              // document.body.appendChild(div);
 
-              document.body.appendChild(div);
+              // Container for Followers and Following
+              const container = document.createElement("div");
+              container.className = "main-container";
 
-              //for image
-              const img = document.createElement("img"); // Create img element
-              console.log(img);
-              img.className = "main"; // Set a class name for styling
-              img.setAttribute("title", "for image");
-              img.src = "https://avatars.githubusercontent.com/u/76490756?v=4";
-              img.alt = "Sample Image";
-              img.style.padding = "12px";
-              img.style.margin = "12px";
-              img.style.border = "2px solid red";
-              // Append the image to the body of the document
+              // Followers block
+              const followersDiv = document.createElement("div");
+              followersDiv.className = "main";
+              followersDiv.innerHTML = `<h2>${data.followers}</h2>`;
+              const addText = document.createTextNode("Followers");
+              followersDiv.appendChild(addText);
+              container.appendChild(followersDiv);
+
+              // Following block
+              const followingDiv = document.createElement("div");
+              followingDiv.className = "main1";
+              followingDiv.innerHTML = `<h2>${data.following}</h2>`;
+              const addText1 = document.createTextNode("Following");
+              followingDiv.appendChild(addText1);
+              container.appendChild(followingDiv);
+
+              document.body.appendChild(container);
+
+              // Avatar Image
+              const img = document.createElement("img");
+              img.src = data.avatar_url;
+              img.alt = "GitHub Avatar";
+              img.className = "avatar-img";
+              img.style.width = "150px"; // Adjust size
               document.body.appendChild(img);
             }
 
-            handlePhoto();
+            showDetails();
           }
         };
         xhr.send();
       },
     };
 
-    // Call the method to fetch and log the details
     gitProfile.myDetails();
   });
+
+//For knowledge purpose
+function showDetails() {
+  // Create a container for followers and following
+  const container = document.createElement("div");
+  container.style.display = "flex"; // Make them in a row
+  container.style.justifyContent = "space-between";
+  container.style.padding = "10px";
+  container.style.width = "50%";
+  container.style.margin = "10px auto";
+  container.style.border = "2px solid gray";
+  container.style.backgroundColor = "#f4f4f4";
+
+  // Followers div
+  const followersDiv = document.createElement("div");
+  followersDiv.className = "main";
+  followersDiv.style.textAlign = "center";
+  followersDiv.style.width = "45%";
+  followersDiv.style.backgroundColor = "green";
+  followersDiv.style.padding = "12px";
+  followersDiv.style.color = "white";
+  followersDiv.innerHTML = `<h2>${data.followers}</h2>`;
+  const followersText = document.createTextNode("Followers");
+  followersDiv.appendChild(followersText);
+
+  // Following div
+  const followingDiv = document.createElement("div");
+  followingDiv.className = "main1";
+  followingDiv.style.textAlign = "center";
+  followingDiv.style.width = "45%";
+  followingDiv.style.backgroundColor = "tomato";
+  followingDiv.style.padding = "12px";
+  followingDiv.style.color = "white";
+  followingDiv.innerHTML = `<h2>${data.following}</h2>`;
+  const followingText = document.createTextNode("Following");
+  followingDiv.appendChild(followingText);
+
+  // Append followers and following to the container
+  container.appendChild(followersDiv);
+  container.appendChild(followingDiv);
+  document.body.appendChild(container);
+
+  // Create and append the avatar image below
+  const img = document.createElement("img");
+  img.src = data.avatar_url;
+  img.alt = "GitHub Avatar";
+  img.style.display = "block";
+  img.style.margin = "20px auto";
+  img.style.width = "150px"; // Adjust size
+  img.style.border = "3px solid red";
+  img.style.borderRadius = "50%"; // Circular avatar
+  document.body.appendChild(img);
+}
+
+showDetails();
