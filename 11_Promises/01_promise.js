@@ -86,17 +86,17 @@ async function consumePromiseFive() {
 consumePromiseFive();
 
 //fetch
-// async function getAllUsers() {
-//   try {
-//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//     console.log(typeof response); //must to know the type
-//     const data = await response.json(); //don't forget to add await
-//     console.log(data);
-//   } catch (error) {
-//     console.log("Error", error);
-//   }
-// }
-// getAllUsers();
+async function getAllUsers() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    console.log(typeof response); //must to know the type
+    const data = await response.json(); //don't forget to add await
+    console.log(data);
+  } catch (error) {
+    console.log("Error", error);
+  }
+}
+getAllUsers();
 
 //same for above method
 fetch("https://api.github.com/users/mohdfurkan01")
