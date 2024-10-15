@@ -22,7 +22,11 @@ function User(username, loginCount, isLoggedIn) {
   this.loginCount = loginCount;
   this.isLoggedIn = isLoggedIn;
 
-  return this;
+  this.greeting = function () {
+    console.log(`Welcome ${this.username}`);
+  };
+
+  return this; //optional
 }
 
 //-Constructor function (it gives a new instance every time)
@@ -31,5 +35,12 @@ function User(username, loginCount, isLoggedIn) {
 //Now without new keyword it override 1st obj to 2nd for
 const userOne = new User("ahsan", 12, true);
 const userTwo = new User("javascript", 11, false);
+
+//* 1-> when we use new keyword it create an empty object {} which is called instance.
+//* 2-> And a constructor function is called due to new keyword
+//* 3-> all the new keyword inject to this keyword
+//* 4-> And finally we get all the instanes inside function
+
 console.log(userOne);
+console.log(userOne.constructor);
 console.log(userTwo);
