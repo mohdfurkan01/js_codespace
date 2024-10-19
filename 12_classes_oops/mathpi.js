@@ -16,6 +16,13 @@ console.log(descriptor);
     configurable: false
   }*/
 
+Object.defineProperty(Math, "PI", {
+  writable: false,
+  enumerable: false,
+});
+console.log("===================>", Math.PI);
+// The value of Math.PI cannot be changed even if you try to use Object.defineProperty. This is because Math.PI is a non-writable property by default.
+
 //? with Object.getOwnPropertyDescriptor. The reason why Math.PI doesn’t change is that Math.PI is a read-only constant. When you check the property descriptor of Math.PI, you'll see that it has the writable attribute set to false. This prevents the value from being changed.
 
 const chai = {
