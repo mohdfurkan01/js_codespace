@@ -21,17 +21,33 @@ class Person {
   #name; // private property
 
   constructor(name) {
-    this.#name = name; // setting the private property
+    this.#name = name; // setting the private property in the constructor
   }
 
+  // Getter method to access the private property
   getName() {
     return this.#name; // accessing the private property
+  }
+
+  // Setter method to update the private property
+  setName(newName) {
+    if (typeof newName === "string" && newName.length > 0) {
+      // some validation
+      this.#name = newName; // setting the private property
+    } else {
+      console.error("Invalid name");
+    }
   }
 }
 
 const furkan = new Person("Furkan");
-console.log(furkan.getName()); // "Furkan"
-//console.log(furkan.#name); // Error: Private field '#name' must be declared in an enclosing class
+
+console.log(furkan.getName()); // Output: "Furkan" (accessing the private property)
+
+furkan.setName("Mohd Furkan"); // modifying the private property
+console.log(furkan.getName()); // Output: "Mohd Furkan"
+
+furkan.setName(""); // Output: Invalid name (failing validation)
 
 //? Private Fields: Declared with a # and only accessible within the class.
 //? Encapsulation: Hides the internal workings of the class, improving code security and maintainability.
