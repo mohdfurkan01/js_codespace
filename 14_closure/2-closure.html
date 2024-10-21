@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head style="background-color: #313131">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #313131">
+    <button id="orange" style="color: orange">Orange</button>
+    <button id="green" style="color: green">Green</button>
+  </body>
+  <script>
+    //Lexical scope is about accessing variables in the current scope chain during the function's execution.
+
+    //Closures are created when an inner function continues to access variables from its parent scope even after the outer function has returned.
+    //when a function is able to "remember" and access its lexical scope even after the function that created the variables has returned.
+
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = `orange`;
+    // };
+    // document.getElementById("green").onclick = function () {
+    //   document.body.style.backgroundColor = `green`;
+    // };
+    //OR
+    // document.getElementById("orange").addEventListener("click", function () {
+    //   document.body.style.backgroundColor = `orange`;
+    // });
+
+    function clickHandler(color) {
+      //document.body.style.backgroundColor = `${color}`;
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+    //clickHandler is like a parent function has variable color and inside this having another function which is returning the backgroundColor injected color varibale and it is accessable bcoz of lexical scoping.
+    //inner function has the access of outer(clickHandler) function
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+
+    //clickHandler Function:
+    // clickHandler(color) is a parent function that takes a color argument. Inside it, there is a returned inner function that changes the background color of the page to the value of color when invoked.
+
+    //Lexical Scoping:
+    //The inner function (which changes the background color) has access to the color variable, which was passed into the outer clickHandler function. This is because of lexical scoping. The inner function can access the variables of its parent function (clickHandler), even though it's executed outside the scope of the parent.
+
+    //Closure:
+    //When clickHandler("orange") or clickHandler("green") is called, it returns the inner function that can change the background color. This returned function retains access to the color argument (either "orange" or "green") because of closure. Even after the clickHandler function has finished executing, the returned function "remembers" the value of color.
+  </script>
+</html>
