@@ -1,4 +1,5 @@
 //class base approach mostly used approx 95%
+
 class User {
   constructor(email, password) {
     // this.email = email,
@@ -40,3 +41,20 @@ console.log(ahsan.password);
 //? Getter: A getter always returns a value. Its main purpose is to allow you to access a property, often after processing or manipulating the internal value.
 
 //? Setter: A setter never returns a value. Its main job is to set or update a value. It takes an argument and assigns it to a property, but it doesn't return anything.
+
+//only getter uses case
+class Person {
+  #name; // private property
+
+  constructor(name) {
+    this.#name = name; // setting the private property
+  }
+
+  getName() {
+    return this.#name; // accessing the private property
+  }
+}
+
+const furkan = new Person("Furkan");
+console.log(furkan.getName()); // "Furkan"
+//console.log(furkan.#name); // Error: Private field '#name' must be declared in an enclosing class
