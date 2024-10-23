@@ -20,3 +20,21 @@ arrTwo.push(6.0);
 //arrTwo.push("any_string");
 arrTwo.push("7");
 //PACKED_ELEMENTS
+
+arrTwo[10] = 11;
+// HOLEY_ELEMENTS bcoz it has a index sapce called hole
+
+console.log(arrTwo);
+console.log(arrTwo.length);
+console.log(arrTwo[9]);
+
+//conditions checking for undefined
+//bound check
+//hasOwnProperty(arrTwo, 9)
+//hasOwnProperty(arrTwo.prototpe, 10)
+//hasOwnProperty(Object.arrTwo, 10);
+
+//holes are very expensive in js
+
+//highest optimized SMI > DOUBLE > PACKED
+//H_SMI > H_DOUBLE > H_PACKED (H_SMI=> hole_smallInteger)
