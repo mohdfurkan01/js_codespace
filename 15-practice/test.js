@@ -29,7 +29,7 @@ console.log(arrTwo.length);
 console.log(arrTwo[9]);
 
 //conditions checking for undefined
-//bound check
+//bound check (array out of bound exception)
 //hasOwnProperty(arrTwo, 9)
 //hasOwnProperty(arrTwo.prototpe, 10)
 //hasOwnProperty(Object.arrTwo, 10);
