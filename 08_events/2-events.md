@@ -41,7 +41,7 @@ If the default action was prevented, defaultPrevented will be true.
 ```javascript
 //HTML
 <a style="color: aliceblue" href="https://google.com" id="defaultPrevented">
-  Zen Browser
+  Zen Browser is good one
 </a>;
 
 document
