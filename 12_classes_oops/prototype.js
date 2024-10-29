@@ -56,7 +56,7 @@ Teacher.__proto__ = User;
 
 //modern syntax
 Object.setPrototypeOf(TeachingSupport, Teacher);
-//TeachingSupport will access all the properties of Teacher
+//TeachingSupport will access all the properties of Teacher refer img prototype.png
 
 //above problem solution
 let anotherUsername = "ChaiAurCode     "; //tureLenth = 11
