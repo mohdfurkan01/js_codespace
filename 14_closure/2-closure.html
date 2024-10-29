@@ -6,7 +6,7 @@
     <title>Closure</title>
   </head>
   <body style="background-color: #313131">
-    <button id="orange" style="color: orange">Orange</button>
+    <button id="orange" style="color: blue">Orange</button>
     <button id="green" style="color: green">Green</button>
   </body>
   <script>
@@ -35,7 +35,7 @@
     //clickHandler is like a parent function has variable color and inside this having another function which is returning the backgroundColor injected color varibale and it is accessable bcoz of lexical scoping.
     //inner function has the access of outer(clickHandler) function
 
-    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("orange").onclick = clickHandler("blue");
     document.getElementById("green").onclick = clickHandler("green");
 
     //clickHandler Function:
