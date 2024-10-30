@@ -1,6 +1,6 @@
 # JavaScript and classes
 
-##OOP
+##OOPs
 
 # Object
 
