@@ -24,8 +24,8 @@ createUser.prototype.printMe = function () {
   console.log(`Price is ${this.score}`);
 };
 
-const chai = new createUser("chai", 30);
-const tea = new createUser("tea", 5);
+const chai = new createUser("chai", 50);
+const tea = new createUser("tea", 20);
 
 chai.printMe(); //Price is 30
 tea.printMe();
