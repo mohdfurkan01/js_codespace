@@ -53,7 +53,9 @@
         .getElementById("picture")
         .addEventListener("keydown", function (event) {
           console.log("Moving to: ", event.toElement);
-          alert("You are moving to: " + event.toElement.tagName);
+          alert(
+            "You are moving towards another side: " + event.toElement.tagName
+          );
         });
 
       document
