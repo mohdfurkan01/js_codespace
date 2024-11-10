@@ -3,7 +3,7 @@
 When you move your mouse from one element to another, the toElement property tells you which element your mouse is moving into.
 toElement tells you the HTML element your mouse pointer is entering during a mouseover or mouseout event.
 
-It lets you know where the user is moving their mouse next.
+It let's you know where the user is moving their mouse next.
 This can be useful when you want to track the flow of the user's interactions, like where they are moving their mouse from one element to another.
 
 ```javascript
