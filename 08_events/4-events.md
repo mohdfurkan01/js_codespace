@@ -131,7 +131,7 @@ document.getElementById("child").addEventListener(
     // Prevent event from bubbling up to the parent
     event.stopPropagation();
   },
-  false //by default
+  false //by default means optional
 );
 ```
 
