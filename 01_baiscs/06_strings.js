@@ -1,9 +1,9 @@
-const name = "Ahsan";
+const name1 = "Ahsan";
 const gfgScore = 80;
 
 //console.log(name + gfgScore + "anyValue");
 
-console.log(`Hey there this side ${name} and my score is: ${gfgScore}`); //modern way and good readability
+console.log(`Hey there this side ${name1} and my score is: ${gfgScore}`); //modern way and good readability
 
 const pubgGame = new String("Pat_se_headshot");
 
@@ -13,19 +13,17 @@ const pubgGame = new String("Pat_se_headshot");
 // console.log(pubgGame.toUpperCase());
 console.log(pubgGame.charAt(2)); // t
 console.log(pubgGame.at(2)); //t
-console.log(pubgGame.indexOf('t')); // 2
+console.log(pubgGame.indexOf("t")); // 2
 
-const anotherStr = pubgGame.substring(0,5); //P=0 a=1 t=2  _=3 s=4   5 is excluding 
+const anotherStr = pubgGame.substring(0, 5); //P=0 a=1 t=2  _=3 s=4   5 is excluding
 console.log(anotherStr); //not support negative index
 
-const forSliceStr = pubgGame.slice(-10,5)  
+const forSliceStr = pubgGame.slice(-10, 5);
 console.log(forSliceStr);
 
 const str3 = "   ahsan   ";
 console.log(str3); // __ahsan__   __space
 console.log(str3.trim()); //ahsan  || to remove space from input field or dont want to save in db
-
-
 
 //at() aur charAt() dono methods strings ke characters ko access karne ke liye use hote hain
 
@@ -34,16 +32,14 @@ console.log(str3.trim()); //ahsan  || to remove space from input field or dont w
 //Description: The charAt() method returns the character at a specific position in a string
 //Index Range: If you use a negative number, out-of-bounds index or a number that's bigger than the length of the string, it will return an empty string.
 
-
 let str = "Hello";
 console.log(str.charAt(1)); // Output: "e"
 console.log(str.charAt(-1)); // Output: ""
 console.log(str.charAt(10)); // Output: ""
 
-
 //2. at() Method:
 //Syntax: string.at(index)
-//Description: The at() method also returns the character at a specific position in a string, 
+//Description: The at() method also returns the character at a specific position in a string,
 //but it has a special feature—it can handle negative numbers.
 //Index Range: This means you can count from the end of the string using negative numbers
 let str2 = "Hello";
@@ -64,22 +60,21 @@ let myStr = "Hello";
 let reversedStr = "";
 
 for (let i = 1; i <= myStr.length; i++) {
-    //reversedStr = reversedStr = myStr.at(-i);
-    reversedStr += myStr.at(-i);
+  //reversedStr = reversedStr = myStr.at(-i);
+  reversedStr += myStr.at(-i);
 }
 console.log(reversedStr); // Output: "olleH"
 
+const myURL = "https://something.com/ahsan%20raza";
+console.log(myURL.replace("%20", "-"));
 
-const myURL = "https://something.com/ahsan%20raza"
-console.log(myURL.replace('%20', '-'));
-
-console.log(myURL.includes('ahsan')); //true
-console.log(myURL.includes('uganda')); //flase
+console.log(myURL.includes("ahsan")); //true
+console.log(myURL.includes("uganda")); //flase
 
 // The split method in JavaScript is used to divide a string into an array of substrings based on a specified delimiter.
 //Case 1: Splitting by Space
-const str4 = 'The quick brown fox jumps over the lazy dog.';
-const words = str4.split(' '); // Split the string into an array of words
+const str4 = "The quick brown fox jumps over the lazy dog.";
+const words = str4.split(" "); // Split the string into an array of words
 //console.log(words); //output ['The', 'quick', 'brown', 'fox', 'jumps'.....something like that]
 console.log(words[3]); // Access the 4th word (index 3)
 
@@ -89,8 +84,8 @@ console.log(words[3]); // Access the 4th word (index 3)
 //words[3]: Accessing index 3 in this array gives "fox", which is the 4th word.
 
 //Case 2: Splitting by Empty String
-const str5 = 'The quick brown fox jumps over the lazy dog.';
-const chars = str5.split(''); // Split the string into an array of characters
+const str5 = "The quick brown fox jumps over the lazy dog.";
+const chars = str5.split(""); // Split the string into an array of characters
 //console.log(chars); //output ['T', 'h', 'e', ' ', 'q', 'u',....something like that]
 console.log(chars[8]); // Access the 9th character (index 8)
 
@@ -101,6 +96,9 @@ console.log(chars[8]); // Access the 9th character (index 8)
 //split(' ') uses a space as the delimiter, resulting in an array of words.
 //split('') uses an empty string as the delimiter, resulting in an array of individual characters.
 
+//* str.split(' '): Splits by each space.
+//* str.split(''): Splits by each character.
+//* str.split(): Splits by any whitespace (spaces, tabs, etc.), removing excess spaces.
 
 //str.split(' '):
 //* What it does: Splits the string wherever there is a space.
@@ -116,7 +114,3 @@ console.log(chars[8]); // Access the 9th character (index 8)
 //* What it does: Without specifying anything, it does not split the string.
 //* Result: You get an array with the original string as the only item.
 //* Example: 'hello world'.split() gives ['hello world'].
-
-
-
-

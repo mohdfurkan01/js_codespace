@@ -1,5 +1,5 @@
-const basic_Arr = [0,1,2,3,4,5];
-const actress_Arr = ["Khaleesi","Targaryen", "Emilia Clarke"];
+const basic_Arr = [0, 1, 2, 3, 4, 5];
+const actress_Arr = ["Khaleesi", "Targaryen", "Emilia Clarke"];
 
 const myArr = new Array(1, 2, 3, 4);
 
@@ -7,26 +7,26 @@ console.log(basic_Arr[1]); //output:1, very simple
 
 console.log(myArr[4]); //undefined
 //when we try to access an index that is out of the range of the array, it will return undefined.
- 
+
 //methods
 basic_Arr.push(6);
 basic_Arr.push(6);
-basic_Arr.pop() //it will remove the value from the last
+basic_Arr.pop(); //it will remove the value from the last
 
 // basic_Arr.unshift(9) //add value in the beginning.
- basic_Arr.shift()  //remove the value in the beginning
+basic_Arr.shift(); //remove the value in the beginning
 console.log(basic_Arr);
 
 console.log(basic_Arr.includes(9)); //false  not exist
 console.log(basic_Arr.includes(3)); //true   exist
 
-console.log(basic_Arr.indexOf(9));  //-1  not exist
+console.log(basic_Arr.indexOf(9)); //-1  not exist
 console.log(basic_Arr.indexOf(4)); //3    exist
 
-const new_Arr = basic_Arr.join()
+const new_Arr = basic_Arr.join();
 
-console.log(basic_Arr); // [ 1, 2, 3, 4, 5, 6 ] arr obj 
-console.log( new_Arr); // 1,2,3,4,5,6  string
+console.log(basic_Arr); // [ 1, 2, 3, 4, 5, 6 ] arr obj
+console.log(new_Arr); // 1,2,3,4,5,6  string
 
 //slice and splice
 const basic_Arr1 = [0, 1, 2, 3, 4, 5];
@@ -44,6 +44,7 @@ console.log("A ", basic_Arr1); // A  [ 0, 1, 2, 3, 4, 5 ]
 const myn1 = basic_Arr1.slice(1, 3); // exclude last range
 console.log(myn1); // [ 1, 2 ]
 
+//does not change the original array
 console.log("B ", basic_Arr1); // B  [ 0, 1, 2, 3, 4, 5 ]
 
 //! splice Method:
