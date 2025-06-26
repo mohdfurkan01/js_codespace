@@ -1,4 +1,4 @@
-// Primitive 
+// Primitive
 //call by value
 // 7 types: String, Number, Boolean, null, undefined, Symbol, BigInt
 const score = 100;
@@ -6,10 +6,10 @@ const scoreValue = 200.4;
 
 const isLoggedIn = false;
 const outsideTemp = null; //typeof object
-let userEmail;  //undefined
+let userEmail; //undefined
 
-const id = Symbol('123');
-const anotherId = Symbol('123');
+const id = Symbol("123");
+const anotherId = Symbol("123");
 console.log(id === anotherId); //false
 console.log(typeof anotherId); //typeof Symbol
 
@@ -19,22 +19,19 @@ console.log(typeof anotherId); //typeof Symbol
 
 // Array, Objects, Functions
 
-const superHeros = ["IronMan", "Thor", "Spiderman"]
+const superHeros = ["IronMan", "Thor", "Spiderman"];
 
 console.log(typeof superHeros); //obj
 
 let herosObj = {
-    name:"Ahsan",
-    age:8,
-    place:"Bareilly",
-    MarritalStatus:false,
-}
+  name: "Ahsan",
+  age: 8,
+  place: "Bareilly",
+  MarritalStatus: false,
+};
 
 //typeof function:function or object funcs
-const myFun = function(){
-    console.log("Wo kisi ko roshan kya kare, Jo charag khud lau ko tarse ho");
-    
-}
+const myFun = function () {};
 myFun();
 // JavaScript is a dynamically typed language.
 //In a dynamically typed language like JavaScript, the type of a variable is determined at runtime rather than at compile time. It means you don't need to explicitly declare the data type of a variable when you create it. The type is automatically assigned based on the value you assign to the variable.
