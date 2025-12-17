@@ -1,22 +1,18 @@
-"use strict" //treat all JS code as newer version or ES6
+"use strict"; //treat all JS code as newer version or ES6
 //It's not automatically applied in modern JavaScript environments unless you explicitly write "use strict"; in your code. However, some newer JavaScript features like ES modules automatically run in strict mode.
-
 
 // JavaScript has dynamic data types, meaning that type checking is done at runtime rather than compile time.
 
 //mdn docs
 //https://tc39.es/ecma262/#sec-intro  =>documentation
 
-
 //alert(3 + 3) //using node.js not browser
 
-console.log(3 +
-    3
-) //not good a way code readabilty should be high 
+console.log(3 + 3); //not a good way and code readabilty should be high
 
-let name = "Ahsan"
-let age = 12
-let isLoggedIn = false
+let name = "Ahsan";
+let age = 12;
+let isLoggedIn = false;
 
 //primitive dataTypes
 //number
