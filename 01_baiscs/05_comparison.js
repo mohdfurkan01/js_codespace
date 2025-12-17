@@ -1,18 +1,46 @@
-console.log(3>1);  //true
-console.log(3>=1); //true
-console.log(3<1);  //false
-console.log(3==1); //false
-console.log(3!=1); //true
-
+console.log(3 > 1); //true
+console.log(3 >= 1); //true
+console.log(3 < 1); //false
+console.log(3 == 1); //false
+console.log(3 != 1); //true
 
 console.log("3" > 1); //true
 console.log("02" > 1); //true
+
+console.log("3" > 1); // true
+
+// Step-by-step:
+// 1. JavaScript sees string "3" and number 1
+// 2. Automatically string "3" ko number mein convert karta hai
+// 3. "3" becomes 3
+// 4. Now comparison: 3 > 1
+// 5. Result: true ✅
+
+//===============================================================================//
+//! Is comparison >, <, >=, <= ?
+//!        │
+//!        ▼
+// !Are both operands strings?
+//!        │
+//!     ├── Yes ──→ Compare as strings (lexicographically)
+//!     │
+//!     └── No ──→ Convert both to numbers
+//!                │
+//!                ▼
+// !           Compare numbers
+
+console.log("100" > "9"); // false ❓ Wait, what?
+// Explanation:
+// Dono strings hain, toh number conversion nahi hoga!
+// String comparison hota hai lexicographically (dictionary order)
+// "1" comes before "9" in dictionary, so "100" < "9"
+// Character-by-character compare:
+// "1" vs "9" -> "1" is smaller, so false
 
 //Avoid these type of comparison
 console.log(null > 0); //FALSE! It’s like, "Is 0 greater than 0?" The answer is obviously no.
 console.log(null == 0); //FALSE! It’s like, "Is 0 greater than or equal to 0?" Now, the answer is yes, because 0 is equal to 0.
 console.log(null >= 0); //TRUE! This is where things get a bit tricky! When you check equality using ==, it doesn’t automatically treat null as 0. Instead, null is only equal to undefined and nothing else
-
 
 //Comparisons (> < >= <=): When comparing, null acts like it’s the number 0.
 
@@ -21,8 +49,8 @@ console.log(null >= 0); //TRUE! This is where things get a bit tricky! When you 
 //The reason is that, null >= 0 is true because null pretends to be 0. But null > 0 is false because 0 is not greater than itself. And null == 0 is false because null doesn’t try to be something it’s not.
 
 //Avoid these type of comparison
-console.log(undefined >0); //FALSE
-console.log(undefined <0); //FALSE
+console.log(undefined > 0); //FALSE
+console.log(undefined < 0); //FALSE
 console.log(undefined == 0); //FALSE
 
 //1. undefined > 0 (false)
@@ -34,7 +62,7 @@ console.log(undefined == 0); //FALSE
 //3. undefined == 0 (false)
 //For equality checks with ==, undefined is only equal to null and not to any number. So, when you check if undefined is equal to 0, JavaScript says, "Nope, undefined isn’t the same as 0," and returns false.
 
-// === strict equality operator 
+// === strict equality operator
 console.log("3" === 3); //FALSE bcoz  it checks both the value and the type
 
 //Value Check: It looks at the values, which are both 3.
