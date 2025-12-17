@@ -4,8 +4,9 @@ var companyPassword = "78787";
 companyCity = "New Delhi"; //but not a good way
 let companyState;
 //when a variable is declared and not assigned any value it will give us "undefined"
+let companyState1 = "UP";
 
-//companyId = 555 //can not changed never
+//companyId = 555 //can never be chnaged
 
 companyEmail = "dev123@gmail.com";
 companyPassword = "33334";
@@ -24,4 +25,5 @@ console.table([
   companyPassword,
   companyCity,
   companyState,
+  companyState1,
 ]);
