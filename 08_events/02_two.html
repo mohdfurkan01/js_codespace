@@ -71,10 +71,18 @@
       });
 
       document.addEventListener("click", function (event) {
-        console.log("You clicked at X position: " + event.clientX);
-        console.log("You clicked at Y position: " + event.clientY);
-        console.log("You clicked at X position: " + event.screenX);
-        console.log("You clicked at Y position: " + event.screenY);
+        console.log(
+          "You clicked at X position for event clientX: " + event.clientX
+        );
+        console.log(
+          "You clicked at Y position for event clientY: " + event.clientY
+        );
+        console.log(
+          "You clicked at X position for event screenX: " + event.screenX
+        );
+        console.log(
+          "You clicked at Y position for event screenY:" + event.screenY
+        );
       });
 
       document
