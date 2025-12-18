@@ -1,15 +1,15 @@
 const course = {
-    courname:"js in Hindi",
-    price:"999",
-    courseInstructor:"Hitesh Sir",
-    havingChild: false
-}
+  coursename: "js in Hindi",
+  price: "999",
+  courseInstructor: "Hitesh Sir",
+  havingChild: false,
+};
 
-//course.courseInstructor 
+//course.courseInstructor
 
 //const {courseInstructor} = course
 //console.log(courseInstructor);
-const {courseInstructor: instructor} = course
+const { courseInstructor: instructor } = course;
 console.log(instructor);
 
 const obj = { a: 1, b: 2 };
@@ -29,11 +29,6 @@ const { a, b } = obj;
 //     "price":"free"
 // }
 
-[
-    {},
-    {},
-    {}
-]
+[{}, {}, {}];
 
 //https://api.github.com/users/hiteshchaudhry
-
