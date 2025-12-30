@@ -59,5 +59,18 @@ const myn2 = basic_Arr1.splice(1, 3);
 console.log("C ", basic_Arr1); // C  [ 0, 4, 5 ]
 console.log(myn2); // [ 1, 2, 3 ] include last range
 
+// splice() ALWAYS mutates (changes) the original array
+// and RETURNS the removed elements.
+
+// It does two things at the same time.
+let arr = [0, 1, 2, 3, 4, 5];
+let arr1 = arr.splice(1, 3);
+
+console.log("original", arr); //remove 3 elements so remaining [0,4,5]
+console.log("splice", arr1); //[1, 2, 3] Elements 1,2,3 are cut out
+
+//arr → holds the remaining elements
+//arr1 → holds the removed elements
+
 //! slice: Copies elements, doesn't modify the original array.
 //! splice: Removes elements, modifies the original array.
